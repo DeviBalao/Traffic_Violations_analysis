@@ -1,3 +1,9 @@
+# Raw Data file - Due to its huge size, cannot be uploaded to GitHub
+Traffic_Violations.csv
+
+# Processed Data File:
+Traffic_Violations_Processed.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
