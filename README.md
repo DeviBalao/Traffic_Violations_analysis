@@ -6,10 +6,6 @@
 Use Exploratory Data analysis, machine learning, and visualization to analyze a dataset of traffic violations from Maryland from the years 2012 to 2023. 
 
 ------------
-## Credits
-ChatGPT was used for some portions for researching approaches to tasks. The data used was from https://data.montgomerycountymd.gov/.
-
-------------
 ## Softwares Used
 ### Libraries
 Pathlib
@@ -74,7 +70,7 @@ GitLens
 -  All of the remaining columns were one hot encoded with pd.get_dummies.
 
 ### Example of One Hot Encoded Features
-![Alt text](Images\image.png)
+![Alt text](Images/image.png)
 
 -  The features were separated from the target feature and assigned the variable X.
 -  The target feature, 'Violation Type', was assigned the variable y.
@@ -83,14 +79,14 @@ GitLens
    the test data, a confusion matrix was calculated and the results of the confusion matrix were displayed.
 
 ### Random Forest Confusion Matrix
-   ![Alt text](Images\image-1.png)
+   ![Alt text](Images/image-1.png)
 
 -  A logistic regression model was instantiated with the solver 'sag', 200 max iterations, and random state of 1.
 -  The training data was fitted with the logistic regression model, predictions were made with the logistic
    regression model on the test data, a confusion matrix was calculated and the results of the confusion matrix were displayed.
 
 ### Logistic Regression Confusion Matrix
-![Alt text](Images\image-2.png)
+![Alt text](Images/image-2.png)
 
 ## Pyspark and Partitioning
 -  Spark and Java were installed in google colab and the environmental variables JAVA_HOME and SPARK_HOME were
@@ -101,62 +97,64 @@ GitLens
 -  Using sql queries, the following was displayed:
    -  The first 5 rows of the dataframe were displayed with a query.
 
-      ![Alt text](Images\image-3.png)
+      ![Alt text](Images/image-3.png)
 
    -  The total number of rows.
 
-      ![Alt text](Images\image-4.png)
+      ![Alt text](Images/image-4.png)
 
    -  The distribution of Violation Types.
 
-      ![Alt text](Images\image-5.png)
+      ![Alt text](Images/image-5.png)
 
    -  The minimum and maximum year of stop in the table.
 
-      ![Alt text](Images\image-6.png)
+      ![Alt text](Images/image-6.png)
 
    -  The number of distinct descriptions
 
-      ![Alt text](Images\image-7.png)
+      ![Alt text](Images/image-7.png)
 
    -  The top 25 descriptions.
 
-      ![Alt text](Images\image-8.png)
+      ![Alt text](Images/image-8.png)
 
    -  The number of violations organized/partitioned by 'Description' with and without partitioning.
-      -  Without partitioning, the query took 9.3 seconds.
-      -  With partitioning, the query took 1.4 seconds.
+      -  Without partitioning, the query took *9.3 seconds.*
+      -  With partitioning, the query took **1.4 seconds.**
    -  The locations with the most speeding incidents in November 2023.
-      -  Without partitioning, the query took 9.0 seconds.
-      -  With partitioning, the query took 0.9 seconds.
+      -  Without partitioning, the query took *9.0 seconds.*
+      -  With partitioning, the query took **0.9 seconds.**
+
+**Note:** The execution time may vary each time the query is executed. However the execution time with partition is always lower than that without partition.
 
 ### Partitioning with Parquet
 
-![Alt text](Images\image-9.png)
+![Alt text](Images/image-9.png)
 
 ## Visualizing in Tableau
 https://public.tableau.com/app/profile/samantha.mckay/viz/UpdatedTrafficViolations/MapofViolations?publish=yes
 
 ### Hours of Accidents and Violations
-![Alt text](Images\image-10.png)
+![Alt text](Images/image-10.png)
 
 ### Accidents and Fatalities by Season
-![Alt text](Images\image-11.png) 
+![Alt text](Images/image-11.png) 
 
 ### Violations Received by Race and Gender and Racial Car Color Distribution
-![Alt text](Images\image-12.png)
+![Alt text](Images/image-12.png)
 
 ### Make Distribution by Gender and Violations Received by Gender
-![Alt text](Images\image-13.png)
+![Alt text](Images/image-13.png)
 
 ### Make Distribution by License Plate Category
-![Alt text](Images\image-14.png)
+![Alt text](Images/image-14.png)
 
 ### Map of Violations
-![Alt text](Images\image-15.png)
+![Alt text](Images/image-15.png)
 
 ### Total Accidents by Vehicle Year
-![Alt text](Images\image-16.png)
+![Alt text](Images/image-16.png)
 
 ## Analysis
 -  The random forest model was slightly more accurate than the linear regression model. 
@@ -169,3 +167,11 @@ https://public.tableau.com/app/profile/samantha.mckay/viz/UpdatedTrafficViolatio
 
 ## Conclusion
 The dataset we used was large and was difficult to parse through. The features that appeared to be free form (Description and Make/Model) would need significantly more work to perfect, but using regex worked well to make the descriptions more uniform. In future, regex would be useful for the make feature. When we started this project, it was of particular interest whether Gender, Race, Make of Vehicle and Color of Vehicle could be used to predict what type of violation would be given to the individual. More work is necessary to find the correct balance of columns to use these features to predict with precision and accuracy. The description is, in theory, the most powerful column as it is specific to the violation that occurred and would have more significance on predicting the type of violation. It would be useful to have the driver's age to help make predictions. For data analysis purposes, many of the columns that are filled out should be drop downs to eliminate errors and make EDA easier.
+
+## Credits
+
+The data used is from https://data.montgomerycountymd.gov/.
+
+This is a group project. Other contributors are Haley Rollins, Samantha Mckay and Erika Camacho
+
+------------
